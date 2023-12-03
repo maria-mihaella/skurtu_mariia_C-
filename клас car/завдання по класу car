@@ -1,0 +1,104 @@
+using System;
+
+namespace Car_Class
+{
+    class Car
+    {
+        public string Name;
+        public string Color;
+        public double Price;
+        public const string CompanyName = "CarCompany";
+
+        public Car()
+        {
+        }
+
+        public Car(string name, string color, double price)
+        {
+            Name = name;
+            Color = color;
+            Price = price;
+        }
+
+        public void Input()
+        {
+            Console.WriteLine("Enter the name of the car: ");
+            Name = Console.ReadLine();
+            Console.WriteLine("Enter the color of the car: ");
+            Color = Console.ReadLine();
+            Console.WriteLine("Enter the price of the car: ");
+            double.TryParse(Console.ReadLine(), out double price);
+            Price = price;
+        }
+
+        public void Print()
+        {
+            Console.WriteLine($"Name: {Name}");
+            Console.WriteLine($"Color: {Color}");
+            Console.WriteLine($"Price: {Price:C}");
+            Console.WriteLine($"Company: {CompanyName}");
+        }
+
+        public void ChangePrice(double x)
+        {
+            Price -= Price * (x / 100);
+        }
+
+        public void ChangeColor(string newColor)
+        {
+            if (Color.ToLower() == "white")
+            {
+                Color = newColor;
+            }
+            else
+            {
+                Console.WriteLine("This car can't be painted because it is not white.");
+            }
+        }
+
+        public string PrintInformation()
+        {
+            return $"Name: {Name}, Color: {Color}, Price: {Price:C}, Company: {CompanyName}";
+        }
+    }
+
+    class Program
+    {
+        static void Main()
+        {
+            Car car1 = new Car();
+            Car car2 = new Car();
+            Car car3 = new Car();
+
+            Console.WriteLine("Enter data for car1:");
+            car1.Input();
+
+            Console.WriteLine("Enter data for car2:");
+            car2.Input();
+
+            Console.WriteLine("Enter data for car3:");
+            car3.Input();
+
+            car1.ChangePrice(10);
+            car2.ChangePrice(10);
+            car3.ChangePrice(10);
+
+            Console.WriteLine("Car data after price change:");
+            car1.Print();
+            car2.Print();
+            car3.Print();
+
+            Console.WriteLine("Enter a new color for white cars: ");
+            string newColor = Console.ReadLine();
+
+            car1.ChangeColor(newColor);
+            car2.ChangeColor(newColor);
+            car3.ChangeColor(newColor);
+
+            Console.WriteLine("Car information after color change:");
+            Console.WriteLine(car1.PrintInformation());
+            Console.WriteLine(car2.PrintInformation());
+            Console.WriteLine(car3.PrintInformation());
+        }
+    }
+}
