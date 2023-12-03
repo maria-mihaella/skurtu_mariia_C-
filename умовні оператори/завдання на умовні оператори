@@ -1,0 +1,170 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        // Завдання 1:
+        Console.WriteLine("task 1");
+        int num;
+        Console.Write("input your number: ");
+        num = int.Parse(Console.ReadLine());
+        if (num < 0)
+        {
+            Console.WriteLine("this number is negative.");
+        }
+        else if (num > 0)
+        {
+            Console.WriteLine("this number is positive.");
+        }
+        else
+        {
+            Console.WriteLine("number = 0");
+        }
+
+        // Завдання 2:
+        Console.WriteLine("task 2");
+        int year;
+        Console.Write("input the year: ");
+        year = int.Parse(Console.ReadLine());
+
+        if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0))
+        {
+            Console.WriteLine("This is a leap year.");
+        }
+        else
+        {
+            Console.WriteLine("This is not a leap year.");
+        }
+
+        // Завдання 3:
+        Console.WriteLine("task 3");
+        Console.WriteLine("input your income: ");
+        double income = Convert.ToDouble(Console.ReadLine());
+        double tax;
+        if (income <= 50000)
+        {
+            tax = income * 0.12;
+        }
+        else if (income <= 100000)
+        {
+            tax = income * 0.24;
+        }
+        else if (income <= 500000)
+        {
+            tax = income * 0.36;
+        }
+        else
+        {
+            tax = income * 0.45;
+        }
+        Console.WriteLine($"income tax: {tax}");
+
+        // Завдання 4:
+        Console.WriteLine("task 4");
+        Console.WriteLine("input a char: ");
+        char inputchar = Convert.ToChar(Console.ReadLine());
+        string vowels = "AEIOUaeiou";
+        if (char.IsLetter(inputchar))
+        {
+            if (vowels.Contains(inputchar.ToString()))
+            {
+                Console.WriteLine("vowel letter");
+            }
+            else
+            {
+                Console.WriteLine("consonant letter");
+            }
+        }
+        else
+        {
+            Console.WriteLine("this char is not a letter");
+        }
+
+        // Завдання 5:
+        Console.WriteLine("task 5");
+        Console.WriteLine("input your first number:");
+        double num1 = Convert.ToDouble(Console.ReadLine());
+        Console.WriteLine("input your second number:");
+        double num2 = Convert.ToDouble(Console.ReadLine());
+        Console.WriteLine("input your third number:");
+        double num3 = Convert.ToDouble(Console.ReadLine());
+        double maxnum;
+        if (num1 >= num2 && num1 >= num3)
+        {
+            maxnum = num1;
+        }
+        else if (num2 >= num1 && num2 >= num3)
+        {
+            maxnum = num2;
+        }
+        else
+        {
+            maxnum = num3;
+        }
+        Console.WriteLine($"the largerst number: {maxnum}");
+
+        // Завдання 6:
+        Console.WriteLine("task 6");
+        Console.WriteLine("input your age:");
+        int age = Convert.ToInt32(Console.ReadLine());
+        if (age >= 12 && age <= 18)
+        {
+            Console.WriteLine("this is a teenager'");
+        }
+        else
+        {
+            Console.WriteLine("this is not a teenager'");
+        }
+
+        // Завдання 7:
+        Console.WriteLine("task 7");
+        Console.WriteLine("input your number:");
+        int number = Convert.ToInt32(Console.ReadLine());
+        if (number % 2 == 0)
+        {
+            Console.WriteLine("the number is even");
+        }
+        else
+        {
+            Console.WriteLine("the number is odd");
+        }
+
+        if (number % 3 == 0)
+        {
+            Console.WriteLine("the number is divisible by 3");
+        }
+        else
+        {
+            Console.WriteLine("the number is not divisible by 3");
+        }
+
+        // Завдання 8:
+        Console.WriteLine("task 8");
+        Console.WriteLine("side a:");
+        double a = Convert.ToDouble(Console.ReadLine());
+        Console.WriteLine("side b:");
+        double b = Convert.ToDouble(Console.ReadLine());
+        Console.WriteLine("side c:");
+        double c = Convert.ToDouble(Console.ReadLine());
+        if (a + b > c && a + c > b && b + c > a)
+        {
+            if (a >= b && a >= c)
+            {
+                Console.WriteLine("Side a is the longest");
+            }
+            else if (b >= a && b >= c)
+            {
+                Console.WriteLine("Side b is the longest");
+            }
+            else
+            {
+                Console.WriteLine("Side c is the longest");
+            }
+        }
+        else
+        {
+            Console.WriteLine("The triangle doesn't exist");
+        }
+    }
+}
