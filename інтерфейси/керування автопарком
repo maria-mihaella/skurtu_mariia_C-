@@ -1,0 +1,123 @@
+using System;
+
+public interface IVehicle
+{
+    void Start();
+    void Stop();
+    void Drive();
+    void DisplayInfo();
+}
+
+public class Car : IVehicle
+{
+    public string Brand { get; set; }
+
+    public Car(string brand)
+    {
+        Brand = brand;
+    }
+
+    public void Start()
+    {
+        Console.WriteLine($"{Brand} car started.");
+    }
+
+    public void Stop()
+    {
+        Console.WriteLine($"{Brand} car stopped.");
+    }
+
+    public void Drive()
+    {
+        Console.WriteLine($"{Brand} car is driving.");
+    }
+
+    public void DisplayInfo()
+    {
+        Console.WriteLine($"Car: {Brand}");
+    }
+}
+
+public class Motorcycle : IVehicle
+{
+    public string Model { get; set; }
+
+    public Motorcycle(string model)
+    {
+        Model = model;
+    }
+
+    public void Start()
+    {
+        Console.WriteLine($"{Model} motorcycle started.");
+    }
+
+    public void Stop()
+    {
+        Console.WriteLine($"{Model} motorcycle stopped.");
+    }
+
+    public void Drive()
+    {
+        Console.WriteLine($"{Model} motorcycle is driving.");
+    }
+
+    public void DisplayInfo()
+    {
+        Console.WriteLine($"Motorcycle: {Model}");
+    }
+}
+
+public class Truck : IVehicle
+{
+    public string Company { get; set; }
+
+    public Truck(string company)
+    {
+        Company = company;
+    }
+
+    public void Start()
+    {
+        Console.WriteLine($"{Company} truck started.");
+    }
+
+    public void Stop()
+    {
+        Console.WriteLine($"{Company} truck stopped.");
+    }
+
+    public void Drive()
+    {
+        Console.WriteLine($"{Company} truck is driving.");
+    }
+
+    public void DisplayInfo()
+    {
+        Console.WriteLine($"Truck: {Company}");
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        Car car = new Car("Toyota");
+        car.Start();
+        car.Drive();
+        car.Stop();
+        car.DisplayInfo();
+
+        Motorcycle motorcycle = new Motorcycle("Harley Davidson");
+        motorcycle.Start();
+        motorcycle.Drive();
+        motorcycle.Stop();
+        motorcycle.DisplayInfo();
+
+        Truck truck = new Truck("Volvo");
+        truck.Start();
+        truck.Drive();
+        truck.Stop();
+        truck.DisplayInfo();
+    }
+}
